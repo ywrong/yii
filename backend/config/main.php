@@ -36,15 +36,34 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
-        ],
-        /*
+        ],       
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-            ],
+                [
+                    'class' => 'yii\rest\UrlRule', 
+                    'controller' => 'user',                                       
+                ]
+            ],        
         ],
-        */
+        /*'urlManager'=>array(
+        	'urlFormat'=>'path',
+        	'rules'=>array(
+                        'post/<id:\d+>/<title:.*?>'=>'post/view',
+                        'posts/<tag:.*?>'=>'post/index',
+                        // REST patterns
+                        array('api/list', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),                       
+                        '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+        	),
+        ),*/
+       
+        'request' => [
+            'parsers' => [
+               'application/json' => 'yii\web\JsonParser',
+            ]
+         ],
     ],
     'params' => $params,
 ];
