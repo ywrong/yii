@@ -10,7 +10,7 @@ use yii\rest\ActiveController;
 
 class ApiController extends ActiveController
 {
-    public $modelClass = 'common\models\User';     
+    public $model = 'common\models\User';     
    
     
     public function actionUsers(){
@@ -18,7 +18,7 @@ class ApiController extends ActiveController
         switch($_GET['model'])
         {
             case 'posts':
-                $models = Post::model()->findAll();
+                $models = Post::model()->findAll();                
                 break;
             default:
                 $this->_sendResponse(501, sprintf('Error: Mode <b>list</b> is not implemented for model <b>%s</b>', $_GET['model']));
