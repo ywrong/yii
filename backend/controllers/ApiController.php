@@ -1,6 +1,8 @@
 <?php
 namespace backend\controllers;
 
+use Yii;
+// use yii\web\Controller;
 use yii\rest\ActiveController;
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -8,12 +10,17 @@ use yii\rest\ActiveController;
  * and open the template in the editor.
  */
 
+echo 'hi';
+exit;
+
 class ApiController extends ActiveController
 {
-    public $model = 'common\models\User';     
+    public $modelClass = 'common\models\User';     
    
+ 
     
     public function actionUsers(){
+
         
         switch($_GET['model'])
         {
