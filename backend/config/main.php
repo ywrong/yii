@@ -38,14 +38,16 @@ return [
             'errorAction' => 'site/error',
         ],       
         'urlManager' => [
+            'urlFormat'=>'path',
             'enablePrettyUrl' => true,
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                [
+                array('api/users', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
+                /*[
                     'class' => 'yii\rest\UrlRule', 
                     'controller' => 'user',                                       
-                ]
+                ]*/
             ],        
         ],
         /*'urlManager'=>array(
