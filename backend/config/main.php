@@ -45,7 +45,7 @@ return [
                 // array('api/users', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
                 [
                     'class' => 'yii\rest\UrlRule', 
-                    'controller' => 'api',                                       
+                    'controller' => 'user',                                       
                 ]
             ],        
         ],
