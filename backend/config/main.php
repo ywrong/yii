@@ -38,33 +38,28 @@ return [
             'errorAction' => 'site/error',
         ],       
         'urlManager' => [
-            'urlFormat'=>'path',
+            //'urlFormat'=>'path',
             'enablePrettyUrl' => true,
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                array('api/users', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
-                /*[
+                //array('api/users', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),
+                [
                     'class' => 'yii\rest\UrlRule', 
                     'controller' => 'user',                                       
-                ]*/
+                ]
             ],        
-        ],
-        /*'urlManager'=>array(
-        	'urlFormat'=>'path',
-        	'rules'=>array(
-                        'post/<id:\d+>/<title:.*?>'=>'post/view',
-                        'posts/<tag:.*?>'=>'post/index',
-                        // REST patterns
-                        array('api/list', 'pattern'=>'api/<model:\w+>', 'verb'=>'GET'),                       
-                        '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-        	),
-        ),*/
+        ],        
        
         'request' => [
             'parsers' => [
                'application/json' => 'yii\web\JsonParser',
             ]
+         ],
+
+         'response' => [
+             'format' => 'yii\web\Response::FORMAT_JSON',
+             'charset' => 'UTF-8'
          ],
     ],
     'params' => $params,
