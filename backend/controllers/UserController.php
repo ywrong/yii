@@ -10,6 +10,9 @@ use yii\rest\ActiveController;
  * and open the template in the editor.
  */
 
+echo 'hello';
+
+
 
 class UserController extends ActiveController
 {
