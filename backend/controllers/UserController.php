@@ -10,15 +10,14 @@ use yii\rest\ActiveController;
  * and open the template in the editor.
  */
 
-echo 'hello';
+//echo 'hello';
 
 
 
 class UserController extends ActiveController
 {
-    public $modelClass = 'common\models\User';     
-   
- 
+    public $modelClass = 'common\models\Users';
+    //public $modelClass = 'backend\models\User';
     
     public function actionUsers(){
         switch($_GET['model'])
